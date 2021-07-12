@@ -1,7 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
+    
+    
+    <!--
+    <category>
+        <pattern>START</pattern>
+        <template>y or n</template>
+    </category>
+    -->
+    
+    <category>
+        <pattern>Y</pattern>
+        <that>y or n</that>
+        <template>y</template>
+    </category>
+    
+    <category>
+        <pattern>N</pattern>
+        <that>y or n</that>
+        <template>n</template>
+    </category>
+    
+    
+    
+    
+    <category>
+        <pattern>START</pattern>
+        <template>Are you a computer science student</template>
+    </category>
+    
+    <!-- If a computer science student -->
+    <category>
+        <pattern>YES</pattern>
+        <that>Are you a computer science student</that>
+        <template>Are you interested in networks</template>
+    </category>
+    
+        <!-- If interested in networks -->
+        <category>
+            <pattern>YES</pattern>
+            <that>Are you interested in networks</that>
+            <template>Would you rather build or defend networks</template>
+        </category>
+        
+            <!-- If more interested in building networks -->
+            <category>
+            <pattern>BUILD</pattern>
+            <that>Would you rather build or defend networks</that>
+            <template>You should consider becoming a network engineer.</template>
+            </category>
+            
+            <!-- If more interested in defending networks -->
+            <category>
+            <pattern>DEFEND</pattern>
+            <that>Would you rather build or defend networks</that>
+            <template>You should consider becoming a cybersecurity analyst.</template>
+            </category>
+            
+        
+        <!-- If not interested in networks -->
+        <category>
+            <pattern>NO</pattern>
+            <that>Are you interested in networks</that>
+            <template>Are you interested in building software</template>
+        </category>
+            
+            <!-- If not interested in building software -->
+            <category>
+                <pattern>NO</pattern>
+                <that>Are you interested in building software</that>
+                <template>You should consider becoming a database administrator.</template>
+            </category>
+            
+            <!-- If interested in building software -->
+            <category>
+                <pattern>YES</pattern>
+                <that>Are you interested in building software</that>
+                <template>Are you interested in specializing in webapps</template>
+            </category>
+            
+                <!-- If interested in specializing in webapps -->
+                <category>
+                    <pattern>YES</pattern>
+                    <that>Are you interested in specializing in webapps</that>
+                    <template>You should consider becoming a web developer.</template>
+                </category>
+                
+                <!-- If not interested in specializing in webapps -->
+                <category>
+                    <pattern>NO</pattern>
+                    <that>Are you interested in specializing in webapps</that>
+                    <template>You should consider becoming a software engineer.</template>
+                </category>
+        
+    
+    
+    
+    <!-- If not a computer science student -->
+    <category>
+        <pattern>NO</pattern>
+        <that>Are you a computer science student</that>
+        <template>No soup for you.</template>
+    </category>
+  
+    
   <category>
-    <pattern>*</pattern>
-    <template>I have no answer for that.</template>
+      <pattern>*</pattern>
+    <template>I have no answer for that. Type "start" to begin.</template>
   </category>
 </aiml>
